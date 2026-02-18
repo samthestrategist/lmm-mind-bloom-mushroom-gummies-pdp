@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import {
-  PRODUCT_NAME,
+  COPY_PRODUCT_NAME,
   BRAND_NAME,
   CHECKOUT_URL_1UNIT,
   CHECKOUT_URL_2UNIT,
@@ -14,12 +14,12 @@ import {
   CDN_AD_OVERLAY,
   PDP_META_TITLE,
   PDP_META_DESC,
-  PDP_HERO_HEADLINE,
-  PDP_HERO_SUBHEADLINE,
-  PDP_HERO_BODY,
-  PDP_HERO_CTA_TEXT,
+  PDP_H1,
+  PDP_HERO_SUBHEAD,
+  PDP_HERO_COPY,
+  PDP_CTA_1,
   PDP_PROBLEM_BODY,
-  PDP_MECHANISM_NAME,
+  MECHANISM_NAME,
   PDP_MECHANISM_HEADLINE,
   PDP_MECHANISM_BODY,
   PDP_STEP_1_HEADLINE,
@@ -37,27 +37,27 @@ import {
   PDP_TESTIMONIAL_3_QUOTE,
   PDP_TESTIMONIAL_3_NAME,
   PDP_TESTIMONIAL_3_LOCATION,
-  PDP_BUNDLE_1_LABEL,
-  PDP_BUNDLE_1_PRICE,
-  PDP_BUNDLE_1_COMPARE,
+  BUNDLE_LABEL_1,
+  BUNDLE_PRICE_1,
+  BUNDLE_COMPARE_1,
   PDP_BUNDLE_1_PER_UNIT,
-  PDP_BUNDLE_2_LABEL,
-  PDP_BUNDLE_2_PRICE,
-  PDP_BUNDLE_2_COMPARE,
+  BUNDLE_LABEL_2,
+  BUNDLE_PRICE_2,
+  BUNDLE_COMPARE_2,
   PDP_BUNDLE_2_PER_UNIT,
-  PDP_BUNDLE_3_LABEL,
-  PDP_BUNDLE_3_PRICE,
-  PDP_BUNDLE_3_COMPARE,
+  BUNDLE_LABEL_3,
+  BUNDLE_PRICE_3,
+  BUNDLE_COMPARE_3,
   PDP_BUNDLE_3_PER_UNIT,
-  PDP_GUARANTEE_DAYS,
+  GUARANTEE,
   PDP_GUARANTEE_HEADLINE,
   PDP_GUARANTEE_BODY,
-  PDP_INGREDIENT_1_NAME,
-  PDP_INGREDIENT_1_SCIENCE,
-  PDP_INGREDIENT_2_NAME,
-  PDP_INGREDIENT_2_SCIENCE,
-  PDP_INGREDIENT_3_NAME,
-  PDP_INGREDIENT_3_SCIENCE,
+  PDP_ACTION_1_TITLE,
+  PDP_ACTION_1_BODY,
+  PDP_ACTION_2_TITLE,
+  PDP_ACTION_2_BODY,
+  PDP_ACTION_3_TITLE,
+  PDP_ACTION_3_BODY,
   PDP_INGREDIENT_4_NAME,
   PDP_INGREDIENT_4_SCIENCE,
   PDP_INGREDIENT_5_NAME,
@@ -72,7 +72,7 @@ import {
   PDP_FAQ_4_A,
   PDP_FAQ_5_Q,
   PDP_FAQ_5_A,
-  PDP_FINAL_CTA_TEXT,
+  PDP_FINAL_CTA_BUTTON,
   PDP_DISCLAIMER,
 } from "../config";
 
@@ -160,9 +160,9 @@ const Index = () => {
   ];
 
   const ingredients = [
-    { name: PDP_INGREDIENT_1_NAME, desc: PDP_INGREDIENT_1_SCIENCE },
-    { name: PDP_INGREDIENT_2_NAME, desc: PDP_INGREDIENT_2_SCIENCE },
-    { name: PDP_INGREDIENT_3_NAME, desc: PDP_INGREDIENT_3_SCIENCE },
+    { name: PDP_ACTION_1_TITLE, desc: PDP_ACTION_1_BODY },
+    { name: PDP_ACTION_2_TITLE, desc: PDP_ACTION_2_BODY },
+    { name: PDP_ACTION_3_TITLE, desc: PDP_ACTION_3_BODY },
     { name: PDP_INGREDIENT_4_NAME, desc: PDP_INGREDIENT_4_SCIENCE },
     { name: PDP_INGREDIENT_5_NAME, desc: PDP_INGREDIENT_5_SCIENCE },
   ];
@@ -192,23 +192,23 @@ const Index = () => {
             <div>
               <DiscountBadge />
               <h1 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "clamp(36px, 5vw, 52px)", lineHeight: 1.1, color: COLORS.headline, margin: "16px 0 24px", letterSpacing: "-0.02em" }}>
-                {PDP_HERO_HEADLINE}<br />
-                <span style={{ color: COLORS.primary }}>{PDP_HERO_SUBHEADLINE}</span>
+                {PDP_H1}<br />
+                <span style={{ color: COLORS.primary }}>{PDP_HERO_SUBHEAD}</span>
               </h1>
               <p style={{ fontSize: "18px", lineHeight: 1.7, color: COLORS.body, maxWidth: "480px", marginBottom: "32px" }}>
-                {PDP_HERO_BODY}
+                {PDP_HERO_COPY}
               </p>
               <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginBottom: "24px" }}>
-                <CTAButton href={CHECKOUT_URL_2UNIT} size="large">{PDP_HERO_CTA_TEXT}</CTAButton>
+                <CTAButton href={CHECKOUT_URL_2UNIT} size="large">{PDP_CTA_1}</CTAButton>
               </div>
               <div style={{ fontSize: "13px", color: COLORS.accent }}>
-                ✓ {PDP_GUARANTEE_DAYS}-Day Money-Back Guarantee &nbsp;·&nbsp; ✓ Free gifts with every order &nbsp;·&nbsp; ✓ Free shipping over $50
+                ✓ {GUARANTEE}-Day Money-Back Guarantee &nbsp;·&nbsp; ✓ Free gifts with every order &nbsp;·&nbsp; ✓ Free shipping over $50
               </div>
             </div>
             <div style={{ textAlign: "center" }}>
               <img
                 src={CDN_HERO_FRONT}
-                alt={`${PRODUCT_NAME} — front view`}
+                alt={`${COPY_PRODUCT_NAME} — front view`}
                 style={{ maxWidth: "100%", borderRadius: "20px", boxShadow: "0 20px 60px rgba(0,0,0,0.12)" }}
               />
             </div>
@@ -226,7 +226,7 @@ const Index = () => {
         <section style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px 60px" }}>
           <img
             src={CDN_HERO_ANGLE}
-            alt={`${PRODUCT_NAME} — angle view showing texture`}
+            alt={`${COPY_PRODUCT_NAME} — angle view showing texture`}
             style={{ width: "100%", borderRadius: "20px", objectFit: "cover", maxHeight: "500px" }}
           />
         </section>
@@ -275,8 +275,8 @@ const Index = () => {
         {/* TEXTURE / LIFESTYLE IMAGES */}
         <section style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px 80px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
-            <img src={CDN_TEXTURE_1} alt={`${PRODUCT_NAME} texture`} style={{ width: "100%", borderRadius: "20px", objectFit: "cover" }} />
-            <img src={CDN_LIFESTYLE_1} alt={`${PRODUCT_NAME} lifestyle`} style={{ width: "100%", borderRadius: "20px", objectFit: "cover" }} />
+            <img src={CDN_TEXTURE_1} alt={`${COPY_PRODUCT_NAME} texture`} style={{ width: "100%", borderRadius: "20px", objectFit: "cover" }} />
+            <img src={CDN_LIFESTYLE_1} alt={`${COPY_PRODUCT_NAME} lifestyle`} style={{ width: "100%", borderRadius: "20px", objectFit: "cover" }} />
           </div>
         </section>
 
@@ -320,17 +320,17 @@ const Index = () => {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
             {/* Tier 1 */}
             <div style={{ background: "#fff", borderRadius: "24px", padding: "36px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", border: "1px solid rgba(196,149,106,0.2)" }}>
-              <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "22px", color: COLORS.headline, marginBottom: "8px" }}>{PDP_BUNDLE_1_LABEL}</h3>
+              <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "22px", color: COLORS.headline, marginBottom: "8px" }}>{BUNDLE_LABEL_1}</h3>
               <div style={{ display: "flex", alignItems: "baseline", gap: "12px", marginBottom: "8px" }}>
-                <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "32px", color: COLORS.cta }}>{PDP_BUNDLE_1_PRICE}</span>
-                <span style={{ textDecoration: "line-through", color: "#9CA3AF", fontSize: "18px" }}>{PDP_BUNDLE_1_COMPARE}</span>
+                <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "32px", color: COLORS.cta }}>{BUNDLE_PRICE_1}</span>
+                <span style={{ textDecoration: "line-through", color: "#9CA3AF", fontSize: "18px" }}>{BUNDLE_COMPARE_1}</span>
                 <span style={{ background: COLORS.green, color: "#fff", fontSize: "12px", fontWeight: 700, padding: "2px 8px", borderRadius: "9999px" }}>25% OFF</span>
               </div>
               <p style={{ fontSize: "13px", color: COLORS.accent, marginBottom: "4px" }}>{PDP_BUNDLE_1_PER_UNIT}</p>
               <p style={{ fontSize: "14px", lineHeight: 1.7, color: COLORS.body, margin: "16px 0 24px" }}>
-                One jar of {PRODUCT_NAME} (45-60 day supply). The perfect entry point to experience the first two phases of the {PDP_MECHANISM_NAME}.
+                One jar of {COPY_PRODUCT_NAME} (45-60 day supply). The perfect entry point to experience the first two phases of the {MECHANISM_NAME}.
               </p>
-              <p style={{ fontSize: "14px", color: COLORS.green, fontWeight: 600, marginBottom: "24px" }}>✓ FREE: Digital "{PRODUCT_NAME} Protocol" Guide ($29 value)</p>
+              <p style={{ fontSize: "14px", color: COLORS.green, fontWeight: 600, marginBottom: "24px" }}>✓ FREE: Digital "{COPY_PRODUCT_NAME} Protocol" Guide ($29 value)</p>
               <CTAButton href={CHECKOUT_URL_1UNIT}>Start With 1 Jar →</CTAButton>
             </div>
 
@@ -339,18 +339,18 @@ const Index = () => {
               <div style={{ position: "absolute", top: "-14px", left: "50%", transform: "translateX(-50%)", background: COLORS.cta, color: "#fff", fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "13px", padding: "6px 20px", borderRadius: "9999px", whiteSpace: "nowrap" }}>
                 ⭐ BEST SELLER — Most Popular
               </div>
-              <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "22px", color: COLORS.headline, marginBottom: "8px", marginTop: "8px" }}>{PDP_BUNDLE_2_LABEL}</h3>
+              <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "22px", color: COLORS.headline, marginBottom: "8px", marginTop: "8px" }}>{BUNDLE_LABEL_2}</h3>
               <div style={{ display: "flex", alignItems: "baseline", gap: "12px", marginBottom: "8px" }}>
-                <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "32px", color: COLORS.cta }}>{PDP_BUNDLE_2_PRICE}</span>
-                <span style={{ textDecoration: "line-through", color: "#9CA3AF", fontSize: "18px" }}>{PDP_BUNDLE_2_COMPARE}</span>
+                <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "32px", color: COLORS.cta }}>{BUNDLE_PRICE_2}</span>
+                <span style={{ textDecoration: "line-through", color: "#9CA3AF", fontSize: "18px" }}>{BUNDLE_COMPARE_2}</span>
                 <span style={{ background: COLORS.green, color: "#fff", fontSize: "12px", fontWeight: 700, padding: "2px 8px", borderRadius: "9999px" }}>25% OFF</span>
               </div>
               <p style={{ fontSize: "13px", color: COLORS.accent, marginBottom: "4px" }}>{PDP_BUNDLE_2_PER_UNIT}</p>
               <p style={{ fontSize: "14px", lineHeight: 1.7, color: COLORS.body, margin: "16px 0 24px" }}>
-                Two jars (90-120 day supply). Most women notice real structural change at weeks 6-8 — this gives you the full {PDP_MECHANISM_NAME} protocol with room to feel the results settle into your skin.
+                Two jars (90-120 day supply). Most women notice real structural change at weeks 6-8 — this gives you the full {MECHANISM_NAME} protocol with room to feel the results settle into your skin.
               </p>
               <div style={{ fontSize: "14px", color: COLORS.green, fontWeight: 600, marginBottom: "24px" }}>
-                <div>✓ FREE: Digital "{PRODUCT_NAME} Protocol" Guide ($29 value)</div>
+                <div>✓ FREE: Digital "{COPY_PRODUCT_NAME} Protocol" Guide ($29 value)</div>
                 <div>✓ FREE: Mini Rose Quartz Facial Roller ($24.99 value)</div>
                 <div>✓ Free shipping included</div>
               </div>
@@ -359,18 +359,18 @@ const Index = () => {
 
             {/* Tier 3 */}
             <div style={{ background: "#fff", borderRadius: "24px", padding: "36px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", border: "1px solid rgba(196,149,106,0.2)" }}>
-              <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "22px", color: COLORS.headline, marginBottom: "8px" }}>{PDP_BUNDLE_3_LABEL}</h3>
+              <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "22px", color: COLORS.headline, marginBottom: "8px" }}>{BUNDLE_LABEL_3}</h3>
               <div style={{ display: "flex", alignItems: "baseline", gap: "12px", marginBottom: "8px" }}>
-                <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "32px", color: COLORS.cta }}>{PDP_BUNDLE_3_PRICE}</span>
-                <span style={{ textDecoration: "line-through", color: "#9CA3AF", fontSize: "18px" }}>{PDP_BUNDLE_3_COMPARE}</span>
+                <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "32px", color: COLORS.cta }}>{BUNDLE_PRICE_3}</span>
+                <span style={{ textDecoration: "line-through", color: "#9CA3AF", fontSize: "18px" }}>{BUNDLE_COMPARE_3}</span>
                 <span style={{ background: COLORS.green, color: "#fff", fontSize: "12px", fontWeight: 700, padding: "2px 8px", borderRadius: "9999px" }}>25% OFF</span>
               </div>
               <p style={{ fontSize: "13px", color: COLORS.accent, marginBottom: "4px" }}>{PDP_BUNDLE_3_PER_UNIT}</p>
               <p style={{ fontSize: "14px", lineHeight: 1.7, color: COLORS.body, margin: "16px 0 24px" }}>
-                Three jars (135-180 day supply). The {PDP_MECHANISM_NAME} works deepest at the 8-12 week mark — 3 jars gives you the complete protocol at the lowest price-per-jar.
+                Three jars (135-180 day supply). The {MECHANISM_NAME} works deepest at the 8-12 week mark — 3 jars gives you the complete protocol at the lowest price-per-jar.
               </p>
               <div style={{ fontSize: "14px", color: COLORS.green, fontWeight: 600, marginBottom: "24px" }}>
-                <div>✓ FREE: Digital "{PRODUCT_NAME} Protocol" Guide ($29 value)</div>
+                <div>✓ FREE: Digital "{COPY_PRODUCT_NAME} Protocol" Guide ($29 value)</div>
                 <div>✓ FREE: Rose Quartz Facial Roller ($24.99 value)</div>
                 <div>✓ FREE: 3-Pack Collagen Sheet Masks ($24.99 value)</div>
                 <div>✓ Free shipping included</div>
@@ -381,7 +381,7 @@ const Index = () => {
 
           {/* Bundle image */}
           <div style={{ textAlign: "center", marginTop: "48px" }}>
-            <img src={CDN_BUNDLE_3} alt={`${PRODUCT_NAME} 3-jar bundle`} style={{ maxWidth: "500px", width: "100%", borderRadius: "20px" }} />
+            <img src={CDN_BUNDLE_3} alt={`${COPY_PRODUCT_NAME} 3-jar bundle`} style={{ maxWidth: "500px", width: "100%", borderRadius: "20px" }} />
           </div>
         </section>
 
@@ -399,12 +399,12 @@ const Index = () => {
               {PDP_GUARANTEE_BODY}
             </p>
             <p style={{ lineHeight: 1.8, color: COLORS.body, fontSize: "17px", marginBottom: "16px" }}>
-              That's exactly why we give you <strong>{PDP_GUARANTEE_DAYS} days, not 30</strong>.
+              That's exactly why we give you <strong>{GUARANTEE} days, not 30</strong>.
             </p>
             <p style={{ lineHeight: 1.8, color: COLORS.body, fontSize: "17px", marginBottom: "32px" }}>
               If you're not seeing the restoration you were promised — contact us and we will refund you completely. No forms. No restocking fees. No fine print. No explaining yourself. Full refund, no questions asked.
             </p>
-            <CTAButton href={CHECKOUT_URL_2UNIT} size="large">Start Your {PDP_GUARANTEE_DAYS}-Day Trial →</CTAButton>
+            <CTAButton href={CHECKOUT_URL_2UNIT} size="large">Start Your {GUARANTEE}-Day Trial →</CTAButton>
           </div>
         </section>
 
@@ -454,26 +454,26 @@ const Index = () => {
         {/* CLOSING CTA */}
         <section style={{ background: `linear-gradient(135deg, ${COLORS.headline} 0%, #5C3D2E 100%)`, padding: "80px 24px", textAlign: "center", color: "#fff" }}>
           <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-            <img src={CDN_AD_OVERLAY} alt={PRODUCT_NAME} style={{ maxWidth: "200px", marginBottom: "32px", borderRadius: "16px" }} />
+            <img src={CDN_AD_OVERLAY} alt={COPY_PRODUCT_NAME} style={{ maxWidth: "200px", marginBottom: "32px", borderRadius: "16px" }} />
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, fontSize: "20px", lineHeight: 1.7, marginBottom: "8px", opacity: 0.9 }}>
               Your skin has been asking for the right mechanism.
             </p>
             <h2 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "clamp(24px, 4vw, 36px)", marginBottom: "24px", lineHeight: 1.2 }}>
-              {PDP_FINAL_CTA_TEXT}
+              {PDP_FINAL_CTA_BUTTON}
             </h2>
             <p style={{ opacity: 0.85, marginBottom: "32px", fontSize: "16px", lineHeight: 1.7 }}>
-              Give your skin {PDP_GUARANTEE_DAYS} days to show you what it can do when it gets what it actually needs.
+              Give your skin {GUARANTEE} days to show you what it can do when it gets what it actually needs.
             </p>
             <div style={{ marginBottom: "24px" }}>
               <DiscountBadge />
             </div>
             <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap", marginBottom: "20px" }}>
-              <a href={CHECKOUT_URL_1UNIT} style={{ background: "rgba(255,255,255,0.15)", color: "#fff", fontFamily: "'DM Sans', sans-serif", fontWeight: 600, padding: "12px 24px", borderRadius: "9999px", textDecoration: "none", fontSize: "15px" }}>1 Jar — {PDP_BUNDLE_1_PRICE}</a>
-              <a href={CHECKOUT_URL_2UNIT} style={{ background: COLORS.cta, color: "#fff", fontFamily: "'DM Sans', sans-serif", fontWeight: 700, padding: "16px 36px", borderRadius: "9999px", textDecoration: "none", fontSize: "17px" }}>2 Jars — {PDP_BUNDLE_2_PRICE} (Best Seller)</a>
-              <a href={CHECKOUT_URL_3UNIT} style={{ background: "rgba(255,255,255,0.15)", color: "#fff", fontFamily: "'DM Sans', sans-serif", fontWeight: 600, padding: "12px 24px", borderRadius: "9999px", textDecoration: "none", fontSize: "15px" }}>3 Jars — {PDP_BUNDLE_3_PRICE}</a>
+              <a href={CHECKOUT_URL_1UNIT} style={{ background: "rgba(255,255,255,0.15)", color: "#fff", fontFamily: "'DM Sans', sans-serif", fontWeight: 600, padding: "12px 24px", borderRadius: "9999px", textDecoration: "none", fontSize: "15px" }}>1 Jar — {BUNDLE_PRICE_1}</a>
+              <a href={CHECKOUT_URL_2UNIT} style={{ background: COLORS.cta, color: "#fff", fontFamily: "'DM Sans', sans-serif", fontWeight: 700, padding: "16px 36px", borderRadius: "9999px", textDecoration: "none", fontSize: "17px" }}>2 Jars — {BUNDLE_PRICE_2} (Best Seller)</a>
+              <a href={CHECKOUT_URL_3UNIT} style={{ background: "rgba(255,255,255,0.15)", color: "#fff", fontFamily: "'DM Sans', sans-serif", fontWeight: 600, padding: "12px 24px", borderRadius: "9999px", textDecoration: "none", fontSize: "15px" }}>3 Jars — {BUNDLE_PRICE_3}</a>
             </div>
             <p style={{ opacity: 0.7, fontSize: "13px" }}>
-              {PDP_GUARANTEE_DAYS}-Day Money-Back Guarantee · Free gifts with every order · Use code SECRET25 at checkout
+              {GUARANTEE}-Day Money-Back Guarantee · Free gifts with every order · Use code SECRET25 at checkout
             </p>
           </div>
         </section>
